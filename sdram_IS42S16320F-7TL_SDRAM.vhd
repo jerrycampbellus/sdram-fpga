@@ -41,14 +41,14 @@ use ieee.math_real.all;
 -- This SDRAM controller provides a symmetric 32-bit synchronous read/write
 -- interface for a 16Mx16-bit SDRAM chip (e.g. AS4C16M16SA-6TCN, IS42S16400F,
 -- etc.).
-entity sdram is
+entity IS42S16320F_7TL_SDRAM is
   generic (
     -- clock frequency (in MHz)
     --
     -- This value must be provided, as it is used to calculate the number of
     -- clock cycles required for the other timing values.
 	-- Set to 143 MHz for IS42S16320F-7TL
-    CLK_FREQ : real	:= 143;
+    CLK_FREQ : real	:= 143.0;
 
     -- 32-bit controller interface
     ADDR_WIDTH : natural := 23;
@@ -122,9 +122,9 @@ entity sdram is
     sdram_dqml  : out std_logic;
     sdram_dqmh  : out std_logic
   );
-end sdram;
+end IS42S16320F_7TL_SDRAM;
 
-architecture arch of sdram is
+architecture arch of IS42S16320F_7TL_SDRAM is
   function ilog2(n : natural) return natural is
   begin
     return natural(ceil(log2(real(n))));
