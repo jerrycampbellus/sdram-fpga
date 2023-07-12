@@ -66,7 +66,7 @@ entity IS42S16320F_7TL_SDRAM is
     CAS_LATENCY : natural := 3; -- 2=below 133MHz, 3=above 133MHz
 
     -- The number of 16-bit words to be bursted during a read/write.
-    BURST_LENGTH : natural := 2;
+    BURST_LENGTH : natural := 4;
 
     -- timing values (in nanoseconds)
     --
@@ -78,7 +78,7 @@ entity IS42S16320F_7TL_SDRAM is
     T_RCD  : real :=     15.0; -- RAS to CAS delay
     T_RP   : real :=     15.0; -- precharge to activate delay
     T_WR   : real :=     12.0; -- write recovery time
-    T_REFI : real :=   7800.0  -- average refresh interval
+    T_REFI : real :=   8192.0  -- average refresh interval
   );
   port (
     -- reset
@@ -109,8 +109,8 @@ entity IS42S16320F_7TL_SDRAM is
 
     -- output data bus
     q : out std_logic_vector(DATA_WIDTH-1 downto 0);
-
-    -- SDRAM interface (e.g. AS4C16M16SA-6TCN, IS42S16400F, etc.)
+	
+	-- SDRAM interface (e.g. AS4C16M16SA-6TCN, IS42S16400F, etc.)
     sdram_a     : out unsigned(SDRAM_ADDR_WIDTH-1 downto 0);
     sdram_ba    : out unsigned(SDRAM_BANK_WIDTH-1 downto 0);
     sdram_dq    : inout std_logic_vector(SDRAM_DATA_WIDTH-1 downto 0);
@@ -211,7 +211,7 @@ architecture arch of IS42S16320F_7TL_SDRAM is
 
   -- counters
   signal wait_counter    : natural range 0 to 16383;
-  signal refresh_counter : natural range 0 to 1023;
+  signal refresh_counter : natural range 0 to 2046;
 
   -- registers
   signal addr_reg : unsigned(SDRAM_COL_WIDTH+SDRAM_ROW_WIDTH+SDRAM_BANK_WIDTH-1 downto 0);
@@ -331,31 +331,33 @@ begin
 
   -- the wait counter is used to hold the current state for a number of clock
   -- cycles
-  update_wait_counter : process (clk, reset)
-  begin
-    if reset = '1' then
-      wait_counter <= 0;
-    elsif rising_edge(clk) then
-      if state /= next_state then -- state changing
-        wait_counter <= 0;
-      else
-        wait_counter <= wait_counter + 1;
-      end if;
-    end if;
+	update_wait_counter : process (clk, reset)
+	begin
+		if reset = '1' then
+			wait_counter <= 0;
+		elsif rising_edge(clk) then
+			if state /= next_state then -- state changing
+				wait_counter <= 0;
+			else
+				wait_counter <= wait_counter + 1;
+			end if;
+		end if;
   end process;
 
   -- the refresh counter is used to periodically trigger a refresh operation
   update_refresh_counter : process (clk, reset)
   begin
-    if reset = '1' then
-      refresh_counter <= 0;
-    elsif rising_edge(clk) then
-      if state = REFRESH and wait_counter = 0 then
-        refresh_counter <= 0;
-      else
-        refresh_counter <= refresh_counter + 1;
-      end if;
-    end if;
+	if state /= INIT then
+		if reset = '1' then
+		  refresh_counter <= 0;
+		elsif rising_edge(clk) then
+		if state = REFRESH and wait_counter = 0 then
+			refresh_counter <= 0;
+		else
+			refresh_counter <= refresh_counter + 1;
+		end if;
+		end if;
+	end if;
   end process;
 
   -- latch the rquest
@@ -433,8 +435,8 @@ begin
       "0010000000000" when INIT,
       MODE_REG        when MODE,
       row             when ACTIVE,
-      "0010" & col    when READ,   -- auto precharge
-      "0010" & col    when WRITE,  -- auto precharge
+      "010" & col     when READ,   -- auto precharge
+      "010" & col     when WRITE,  -- auto precharge
       (others => '0') when others;
 
   -- decode the next 16-bit word from the write buffer

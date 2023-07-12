@@ -1,6 +1,36 @@
 m255
 K4
 z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
 !s11e vcom 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -9,48 +39,81 @@ z2
 !i10f 100
 cModel Technology
 dC:/Users/jcamp/OneDrive/Documents/Projects
+T_opt
+!s110 1689013590
+VVk30fm221Oh8EC59aID9b1
+04 26 4 work IS42S16320F_7TL_SDRAM_test fast 0
+=11-60f677405434-64ac4d56-da-5658
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
 Eis42s16320f_7tl_sdram
-Z0 w1688926804
-Z1 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
-Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
-Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 0
-Z5 dC:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/Test
-Z6 8C:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/sdram_IS42S16320F-7TL_SDRAM.vhd
-Z7 FC:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/sdram_IS42S16320F-7TL_SDRAM.vhd
+Z2 w1688999927
+Z3 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z4 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 77
+Z7 dC:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/Test
+Z8 8C:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/sdram_IS42S16320F-7TL_SDRAM.vhd
+Z9 FC:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/sdram_IS42S16320F-7TL_SDRAM.vhd
 l0
 L44 1
-VWTBR=e<6QWIYm1@bmC`;g0
-!s100 ilHlSAKTZonL@0HCK8l8D3
-Z8 OL;C;2021.2;73
+VG;MkmeN<f4BI^]k2abUNf1
+!s100 lh[8cUV6A4K89CRF2n48F0
+Z10 OL;C;2021.2;73
 32
-Z9 !s110 1688926820
+Z11 !s110 1689013561
 !i10b 1
-Z10 !s108 1688926819.000000
-Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/sdram_IS42S16320F-7TL_SDRAM.vhd|
-!s107 C:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/sdram_IS42S16320F-7TL_SDRAM.vhd|
-!i113 0
-Z12 o-work work -2002 -explicit
-Z13 tExplicit 1 CvgOpt 0
-Aarch
-R1
-R2
-R3
-R4
-DEx4 work 21 is42s16320f_7tl_sdram 0 22 WTBR=e<6QWIYm1@bmC`;g0
-!i122 0
-l226
-L127 320
-VR?M3om0WXnj03C^;M3BBA0
-!s100 _c]k6ClIYoMAhFoLMJm@72
-R8
-32
-R9
-!i10b 1
-R10
-R11
+Z12 !s108 1689013561.000000
+Z13 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/sdram_IS42S16320F-7TL_SDRAM.vhd|
 Z14 !s107 C:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/sdram_IS42S16320F-7TL_SDRAM.vhd|
 !i113 0
+Z15 o-work work -2002 -explicit
+Z16 tExplicit 1 CvgOpt 0
+Aarch
+R3
+R4
+R5
+R6
+DEx4 work 21 is42s16320f_7tl_sdram 0 22 G;MkmeN<f4BI^]k2abUNf1
+!i122 77
+l226
+L127 322
+V?RO;?005n>Qo6Q_6T>3]R2
+!s100 Il=9@o:HQFDS2H_a`m]z41
+R10
+32
+R11
+!i10b 1
 R12
 R13
+R14
+!i113 0
+R15
+R16
+vIS42S16320F_7TL_SDRAM_test
+R11
+!i10b 1
+!s100 U7R8ez9CRB81od;JkCQNP2
+IRQ`X9Zc]_>hGOAG_B<Doi1
+R7
+w1689013545
+8C:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/Test/Test_IS42S16320F-7TL_SDRAM.v
+FC:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/Test/Test_IS42S16320F-7TL_SDRAM.v
+!i122 78
+L0 1 153
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2021.2;73
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/Test/Test_IS42S16320F-7TL_SDRAM.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/jcamp/OneDrive/Documents/GitHub/sdram-fpga/Test/Test_IS42S16320F-7TL_SDRAM.v|
+!i113 0
+o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@i@s42@s16320@f_7@t@l_@s@d@r@a@m_test
